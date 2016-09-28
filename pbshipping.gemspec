@@ -1,14 +1,24 @@
-Gem::Specification.new do |s|
-  s.name        = 'pbshipping'
-  s.version     = '1.0.0'
-  s.date        = '2016-07-01'
-  s.summary     = "Client library for using Pitney Bowes Shipping API"
-  s.description = "Client library for using Pitney Bowes Shipping API"
-  s.add_dependency('rest-client', '>= 1.8')
-  s.authors     = ["Pitney Bowes Shipping API support team"]
-  s.email       = 'ShippingAPISupport@ob.com'
-  s.files       = ["tutorial.rb", "lib/pbshipping.rb"].concat(Dir.entries('./lib/pbshipping/').keep_if { |v| /\.rb$/.match(v) }.collect! { |v| './lib/pbshipping/'+v })
-  s.homepage    = 'http://developer.pitneybowes.com'
-  s.license     = 'MIT'
-  s.metadata    = {'pbshipping_documentation' => "http://developer.pitneybowes.com/" }
+# encoding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'pbshipping/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = 'pbshipping'
+  spec.version       = PBShipping::VERSION
+  spec.summary       = "Client library for using Pitney Bowes Shipping API"
+  spec.description   = "Client library for using Pitney Bowes Shipping API"  
+  spec.authors       = ["Pitney Bowes Shipping API support team"]
+  spec.email         = 'ShippingAPISupport@pb.com'
+  spec.files         = Dir['tutorial.rb', 'README.md', 'LICENSE', 'lib/**/*']  
+  spec.test_files    = Dir['test/*']
+  spec.require_paths = ["lib"]
+  spec.homepage      = 'http://developer.pitneybowes.com'
+  spec.license       = 'MIT'
+  spec.metadata      = {'pbshipping_documentation' => "http://developer.pitneybowes.com/" }  
+
+  spec.add_dependency 'rest-client', '~> 1.8'
+
 end
+
+
