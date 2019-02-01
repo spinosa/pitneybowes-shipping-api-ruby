@@ -167,7 +167,7 @@ def make_http_request(opts)
     if [301, 302, 307].include? response.code
       response.follow_redirection(request, result, &block)
     else
-      response.return!(request, result, &block)
+      response.return!(&block)
     end
   }
 end

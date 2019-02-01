@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
   spec.metadata      = {'pbshipping_documentation' => "http://developer.pitneybowes.com/" }  
 
-  spec.add_dependency 'rest-client', '~> 1.8'
+  spec.add_dependency 'rest-client', '~> 2.0'
 
 end
 
