@@ -26,7 +26,7 @@ module PBShipping
       @error_info = []
       if http_body != nil 
         begin 
-          json_error = PBShipping::json_parse(http_body)
+          json_error = JSON::parse(http_body, { :symbolize_names => true })
         rescue => e
         end
         if json_error.is_a?(Array)
